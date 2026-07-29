@@ -4,7 +4,7 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="flex items-center justify-between h-16">
         <!-- Left: avatar + title -->
-        <div class="flex items-center gap-3">
+        <div class="flex items-center">
 
           <a href='{{ .Site.BaseURL }}' class="flex items-center gap-3 group" aria-label="Homepage">
 
@@ -18,16 +18,17 @@
             </span>
           </a>
 
-          <button type="button" data-theme-toggle
-            class="theme-toggle inline-flex items-center justify-center p-1 text-xl leading-none transition-colors duration-200"
-            aria-label="Switch between light and dark themes" title="Switch color theme">
-            <span class="theme-toggle-light" aria-hidden="true"><i class="fa-solid fa-moon"></i></span>
-            <span class="theme-toggle-dark" aria-hidden="true"><i class="fa-solid fa-sun"></i></span>
-          </button>
         </div>
 
         <!-- Right: menu (desktop) + mobile toggle -->
         <div class="flex items-center gap-4">
+          <button type="button" data-theme-toggle
+            class="theme-toggle inline-flex items-center justify-center p-1 text-xl leading-none transition-opacity duration-200 hover:opacity-70"
+            aria-label="Switch between light and dark themes" title="Switch color theme">
+            <span class="theme-toggle-light" aria-hidden="true"><i class="fa-solid fa-moon"></i></span>
+            <span class="theme-toggle-dark" aria-hidden="true"><i class="fa-solid fa-sun"></i></span>
+          </button>
+
           <!-- Desktop menu (hidden on small screens) -->
           <div class="hidden md:flex items-center">
             {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
