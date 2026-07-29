@@ -1,7 +1,31 @@
 {{/* Theme document head. */}}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<meta name="color-scheme" content="light">
+<meta name="color-scheme" content="light dark">
+<script>
+  (() => {
+    const storageKey = "enervoid-theme";
+    let theme = "light";
+
+    try {
+      theme = localStorage.getItem(storageKey) === "dark" ? "dark" : "light";
+    } catch (_) {}
+
+    document.documentElement.dataset.theme = theme;
+
+    document.addEventListener("click", (event) => {
+      const toggle = event.target.closest("[data-theme-toggle]");
+      if (!toggle) return;
+
+      const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+      document.documentElement.dataset.theme = nextTheme;
+
+      try {
+        localStorage.setItem(storageKey, nextTheme);
+      } catch (_) {}
+    });
+  })();
+</script>
 <link rel="icon" type="image/png" href="/avatar.png">
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s" .Title }}{{ end }}</title>
 {{ partialCached "head/css.html" . }}

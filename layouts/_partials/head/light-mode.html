@@ -1,130 +1,148 @@
 {{/* Light-mode styles loaded by head.html. */}}
 <style>
-  :root {
+  html[data-theme="light"] {
     color-scheme: light;
   }
 
-  html,
-  body {
+  html[data-theme="dark"] {
+    color-scheme: dark;
+  }
+
+  html[data-theme="light"],
+  html[data-theme="light"] body {
     background: #fafafa !important;
     color: #27272a !important;
   }
 
   /* Enervoid hard-codes its dark palette in utility classes. */
-  [class~="bg-black"],
-  [class*="bg-black/"] {
+  html[data-theme="light"] [class~="bg-black"],
+  html[data-theme="light"] [class*="bg-black/"] {
     background-color: #f4f4f5 !important;
   }
 
-  [class*="bg-[#070709]"] {
+  html[data-theme="light"] [class*="bg-[#070709]"] {
     background-color: #fff !important;
   }
 
-  [class~="text-white"],
-  [class~="text-gray-100"],
-  [class~="text-gray-200"] {
+  html[data-theme="light"] [class~="text-white"],
+  html[data-theme="light"] [class~="text-gray-100"],
+  html[data-theme="light"] [class~="text-gray-200"] {
     color: #18181b !important;
   }
 
-  [class~="text-gray-300"] {
+  html[data-theme="light"] [class~="text-gray-300"] {
     color: #3f3f46 !important;
   }
 
-  [class~="text-gray-400"],
-  [class~="text-gray-500"] {
+  html[data-theme="light"] [class~="text-gray-400"],
+  html[data-theme="light"] [class~="text-gray-500"] {
     color: #52525b !important;
   }
 
-  [class~="text-gray-600"],
-  [class~="text-gray-700"] {
+  html[data-theme="light"] [class~="text-gray-600"],
+  html[data-theme="light"] [class~="text-gray-700"] {
     color: #71717a !important;
   }
 
-  [class~="text-blue-200"] {
+  html[data-theme="light"] [class~="text-blue-200"] {
     color: #1d4ed8 !important;
   }
 
   /* Links inside the homepage About Me panel. */
-  [class*="[&_a]:text-blue-200"] a {
+  html[data-theme="light"] [class*="[&_a]:text-blue-200"] a {
     color: #3b82f6 !important;
   }
 
-  [class*="[&_a]:text-blue-200"] a:hover {
+  html[data-theme="light"] [class*="[&_a]:text-blue-200"] a:hover {
     color: #2563eb !important;
   }
 
-  [class~="border-gray-800"],
-  [class*="border-gray-800/"],
-  [class~="border-gray-700"],
-  [class*="border-gray-700/"],
-  [class~="border-neutral-800"] {
+  html[data-theme="light"] [class~="border-gray-800"],
+  html[data-theme="light"] [class*="border-gray-800/"],
+  html[data-theme="light"] [class~="border-gray-700"],
+  html[data-theme="light"] [class*="border-gray-700/"],
+  html[data-theme="light"] [class~="border-neutral-800"] {
     border-color: #d4d4d8 !important;
   }
 
-  [class~="bg-neutral-950"],
-  [class~="bg-neutral-900"] {
+  html[data-theme="light"] [class~="bg-neutral-950"],
+  html[data-theme="light"] [class~="bg-neutral-900"] {
     background-color: #f4f4f5 !important;
   }
 
-  [class*="divide-gray-800"] > :not(:last-child) {
+  html[data-theme="light"] [class*="divide-gray-800"] > :not(:last-child) {
     border-color: #e4e4e7 !important;
   }
 
-  [class*="hover:bg-white/5"]:hover,
-  [class~="hover:bg-neutral-900"]:hover {
+  html[data-theme="light"] [class*="hover:bg-white/5"]:hover,
+  html[data-theme="light"] [class~="hover:bg-neutral-900"]:hover {
     background-color: #f4f4f5 !important;
   }
 
-  [class*="hover:text-white"]:hover,
-  [class*="hover:text-gray-200"]:hover {
+  html[data-theme="light"] [class*="hover:text-white"]:hover,
+  html[data-theme="light"] [class*="hover:text-gray-200"]:hover {
     color: #18181b !important;
   }
 
-  .md-content a,
-  .toc a,
-  footer a {
+  html[data-theme="light"] .md-content a,
+  html[data-theme="light"] .toc a,
+  html[data-theme="light"] footer a {
     color: #1d4ed8;
   }
 
-  footer a.footer-social {
+  html[data-theme="light"] footer a.footer-social,
+  html[data-theme="light"] .theme-toggle {
     color: #18181b;
   }
 
-  footer a.footer-social:hover {
+  html[data-theme="light"] footer a.footer-social:hover,
+  html[data-theme="light"] .theme-toggle:hover {
     color: #2563eb;
   }
 
-  .toc a:hover {
+  html[data-theme="light"] .toc a:hover {
     color: #1e40af !important;
   }
 
-  .toc ul ul {
+  html[data-theme="light"] .toc ul ul {
     border-color: #d4d4d8 !important;
   }
 
   /* Preserve Enervoid's original dark Monokai code-block chrome and tokens. */
-  div:has(> .codewrap) {
+  html[data-theme="light"] div:has(> .codewrap) {
     background-color: #000 !important;
     border-color: rgba(31, 41, 55, 0.8) !important;
   }
 
-  div:has(> .codewrap) > div:first-child {
+  html[data-theme="light"] div:has(> .codewrap) > div:first-child {
     background-color: #070709 !important;
     border-color: rgba(31, 41, 55, 0.7) !important;
   }
 
-  div:has(> .codewrap) > div:first-child [class~="text-gray-500"] {
+  html[data-theme="light"] div:has(> .codewrap) > div:first-child [class~="text-gray-500"] {
     color: #6b7280 !important;
   }
 
-  div:has(> .codewrap) > div:first-child [class~="text-gray-600"] {
+  html[data-theme="light"] div:has(> .codewrap) > div:first-child [class~="text-gray-600"] {
     color: #4b5563 !important;
   }
 
-  .codewrap,
-  .highlight,
-  .highlight pre,
-  .highlight code {
+  html[data-theme="light"] .codewrap,
+  html[data-theme="light"] .highlight,
+  html[data-theme="light"] .highlight pre,
+  html[data-theme="light"] .highlight code {
     color-scheme: dark;
+  }
+
+  .theme-toggle-dark {
+    display: none;
+  }
+
+  html[data-theme="dark"] .theme-toggle-light {
+    display: none;
+  }
+
+  html[data-theme="dark"] .theme-toggle-dark {
+    display: inline;
   }
 </style>
